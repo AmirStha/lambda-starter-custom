@@ -3,7 +3,7 @@ This Lambda function integrates with [**Bottle Monitoring Lambda**](https://gitl
 
 You have to supply the values for the following parameters
 - **invocation_threshold** - Number of times Lambda function is invoked in 1 minute, default is 30 times, if crossed activates the alarm
-- **throttled_count** - No. of times Lambda function was throttled, default is 5 times before the alarm goes off
+- **throttled_count** - No. of times Lambda function was throttled in 1 minute, default is 5 times, if crossed alarm goes off
 - **Profile**
 
 To deploy this Lambda function use the following behaviour :
