@@ -6,4 +6,4 @@ You have to supply the values for the following parameters
 **Profile**
 
 To deploy this Lambda function use the following behaviour :
-<addr>sls deploy --invocation_threshold 30 --profile learn --throttled_count 5
+```sls deploy --invocation_threshold 30 --profile learn --throttled_count 5```
