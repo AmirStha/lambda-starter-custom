@@ -2,7 +2,7 @@
 This Lambda function integrates with [**Bottle Monitoring Lambda**](https://gitlab.com/bottle-tech/bottle-library/resource-monitoring-lambda) to monitor **Invocations** and **Throttles**
 You have to supply the values for the following parameters
 - **invocation_threshold** - Number of times Lambda function is invoked in 1 minute, default is 30 times, if crossed activates the alarm
-- **--throttled_count** - No. of times Lambda function was throttled, default is 5 times
+- **throttled_count** - No. of times Lambda function was throttled, default is 5 times
 - **Profile**
 
 To deploy this Lambda function use the following behaviour :
