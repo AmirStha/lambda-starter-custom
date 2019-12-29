@@ -1,18 +1,17 @@
 service: operationallambda
-app: serverless 
+app: serverless
 
 custom:
-
   invocation_threshold: ${opt:invocation_threshold, '10'}
   throttled_count: ${opt:throttled_count, '5'}
-  defaultStage: test 
+  defaultStage: test
   profiles:
-    test: learn 
+    test: learn
     dev: bottle
-    staging: bottle 
-    prod: bottle 
+    staging: bottle
+    prod: bottle
 
-  region: 
+  region:
     test: us-east-1
     dev: us-east-1
     staging: us-east-1
@@ -21,7 +20,7 @@ custom:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
-           Action:
+          Action:
             - logs:CreateLogGroup
             - logs:CreateLogStream
             - logs:PutLogEvents
@@ -34,16 +33,14 @@ provider:
   profile: ${self:custom.profiles.${self:provider.stage}}
   region: ${self:custom.region.${self:provider.stage}}
 
-
 functions:
   hello:
     handler: handler.hello
     events:
-     - http:
+      - http:
           path: hello
           method: get
           cors: true
 
 resources:
   - ${file(resources/alarms.yml)}
-
