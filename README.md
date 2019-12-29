@@ -10,7 +10,7 @@ You have to supply the values for the following parameters
 
 To make it your own sls setup:
 
-sls install --url https://github.com/AmirStha/lambda-starter-custom.git --name <yout_lambda_projectname>
+sls install --url https://github.com/AmirStha/lambda-starter-custom --name <yout_lambda_projectname>
 
 To deploy this Lambda function use the following behaviour :
 
