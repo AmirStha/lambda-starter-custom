@@ -1,31 +1,7 @@
-service: operationallambda
+service: operationalLambda
 app: serverless
 
-custom:
-  invocation_threshold: ${opt:invocation_threshold, '10'}
-  throttled_count: ${opt:throttled_count, '5'}
-  defaultStage: test
-  profiles:
-    test: learn
-    dev: bottle
-    staging: bottle
-    prod: bottle
-
-  region:
-    test: us-east-1
-    dev: us-east-1
-    staging: us-east-1
-    prod: us-east-1
-
-    iamRoleStatements:
-      - Effect: "Allow"
-        Action:
-          Action:
-            - logs:CreateLogGroup
-            - logs:CreateLogStream
-            - logs:PutLogEvents
-        Resource:
-          - "*"
+custom: ${file(ymls/custom.yml)}
 provider:
   name: aws
   runtime: nodejs12.x
@@ -34,13 +10,7 @@ provider:
   region: ${self:custom.region.${self:provider.stage}}
 
 functions:
-  hello:
-    handler: handler.hello
-    events:
-      - http:
-          path: hello
-          method: get
-          cors: true
+  - ${file(src/functions/test/index.yml)}
 
 resources:
   - ${file(resources/alarms.yml)}
