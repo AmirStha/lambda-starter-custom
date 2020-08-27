@@ -1,0 +1,20 @@
+{
+  "name": "lambda-starter-custom",
+  "version": "1.0.0",
+  "description": "<!-- This Lambda function integrates with [**resource-monitoring-lambda**](https://gitlab.com/bottle-tech/bottle-library/resource-monitoring-lambda) to monitor **Invocations** and **Throttles** -->",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmirStha/lambda-starter-custom.git"
+  },
+  "keywords": [],
+  "author": "Amir Shrestha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmirStha/lambda-starter-custom/issues"
+  },
+  "homepage": "https://github.com/AmirStha/lambda-starter-custom#readme"
+}
