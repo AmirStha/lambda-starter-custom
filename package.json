@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/AmirStha/lambda-starter-custom/issues"
   },
-  "homepage": "https://github.com/AmirStha/lambda-starter-custom#readme"
+  "homepage": "https://github.com/AmirStha/lambda-starter-custom#readme",
+  "devDependencies": {
+    "serverless-iam-roles-per-function": "^2.0.2",
+    "serverless-offline": "^6.7.0",
+    "serverless-plugin-include-dependencies": "^4.1.0",
+    "serverless-prune-plugin": "^1.4.3"
+  }
 }
