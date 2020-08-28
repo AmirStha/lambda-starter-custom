@@ -8,6 +8,20 @@ provider:
   stage: ${opt:stage, self:custom.defaultStage}
   profile: ${self:custom.profiles.${self:provider.stage}}
   region: ${self:custom.region.${self:provider.stage}}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - logs:CreateLogGroup
+        - logs:CreateLogStream
+        - logs:PutLogEvents
+      Resource:
+        - "*"
+
+plugins:
+  - serverless-offline
+  - serverless-prune-plugin
+  - serverless-iam-roles-per-function
+  - serverless-plugin-include-dependencies
 
 functions:
   - ${file(src/functions/test/index.yml)}

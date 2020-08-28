@@ -13,12 +13,8 @@ region:
   staging: us-west-2
   prod: us-east-1
 
-  iamRoleStatements:
-    - Effect: "Allow"
-      Action:
-        Action:
-          - logs:CreateLogGroup
-          - logs:CreateLogStream
-          - logs:PutLogEvents
-      Resource:
-        - "*"
+prune: # automatically prune old lambda versions
+  automatic: true
+  number: 3
+serverless-iam-role-per-function:
+  defaultInherit: true # Each function will inherit the service level roles too.
